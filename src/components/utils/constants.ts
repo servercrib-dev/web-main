@@ -101,3 +101,4 @@ export const products = [
 
 export const menu = ["products", "solutions", "services", "vendors"];
 export const aboutMenu = ["company", "leadership", "careers"]
+export const footerMenu = ["about", "solutions", "services", "products", "careers", "contact"]
