@@ -91,11 +91,6 @@ const About = () => {
                   size="lg"
                   variant="outline"
                   className="border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white text-lg px-8 py-6 font-semibold"
-                  onClick={() =>
-                    document
-                      .getElementById("solutions")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
                 >
                   🚀 Explore Our Solutions
                 </Button>

@@ -4,8 +4,8 @@ import MatrixRain from "./MatrixRain";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToStats = () => {
+    document.getElementById("stats")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -65,7 +65,10 @@ const Hero = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="flex justify-center animate-bounce">
+          <div
+            className="flex justify-center animate-bounce cursor-pointer"
+            onClick={scrollToStats}
+          >
             <ChevronDown className="h-8 w-8 text-primary" />
           </div>
         </div>
