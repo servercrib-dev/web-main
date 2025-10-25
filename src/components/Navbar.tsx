@@ -9,12 +9,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
@@ -23,46 +24,52 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="ServerCrib Logo" className="h-10 w-10 object-contain rounded" />
-            <h1 className="text-xl md:text-2xl font-bold text-foreground">
-              ServerCrib
-            </h1>
-          </div>
+          <Link to={"/"}>
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="ServerCrib Logo"
+                className="h-10 w-10 object-contain rounded"
+              />
+              <h1 className="text-xl md:text-2xl font-bold text-foreground">
+                ServerCrib
+              </h1>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-            <button 
-              onClick={() => scrollTo('products')}
+            <Link
+              to={"/products"}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Products
-            </button>
-            <button 
-              onClick={() => scrollTo('solutions')}
+            </Link>
+            <Link
+              to={"/solutions"}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Solutions
-            </button>
-            <button 
-              onClick={() => scrollTo('services')}
+            </Link>
+            <button
+              onClick={() => scrollTo("services")}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Services
             </button>
-            <button 
-              onClick={() => scrollTo('clients')}
+            <button
+              onClick={() => scrollTo("clients")}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Clients
             </button>
-            <button 
-              onClick={() => scrollTo('vendors')}
+            <button
+              onClick={() => scrollTo("vendors")}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Vendors
             </button>
-            
+
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -73,7 +80,7 @@ const Navbar = () => {
                     <ul className="w-48 p-2">
                       <li>
                         <button
-                          onClick={() => scrollTo('about')}
+                          onClick={() => scrollTo("about")}
                           className="block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors"
                         >
                           Company
@@ -81,7 +88,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <button
-                          onClick={() => scrollTo('about')}
+                          onClick={() => scrollTo("about")}
                           className="block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors"
                         >
                           Leadership
@@ -89,7 +96,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <button
-                          onClick={() => scrollTo('about')}
+                          onClick={() => scrollTo("about")}
                           className="block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors"
                         >
                           Careers
@@ -97,7 +104,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <button
-                          onClick={() => scrollTo('about')}
+                          onClick={() => scrollTo("about")}
                           className="block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors"
                         >
                           Newsroom
@@ -109,14 +116,14 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <button 
-              onClick={() => scrollTo('contact')}
+            <button
+              onClick={() => scrollTo("contact")}
               className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium"
             >
               Contact Us
             </button>
-            <Button 
-              onClick={() => scrollTo('contact')} 
+            <Button
+              onClick={() => scrollTo("contact")}
               size="sm"
               className="bg-primary hover:bg-primary/90 text-black font-semibold"
             >
@@ -137,58 +144,60 @@ const Navbar = () => {
         {isOpen && (
           <div className="lg:hidden py-4 space-y-3 border-t border-border/30">
             <button
-              onClick={() => scrollTo('products')}
+              onClick={() => scrollTo("products")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Products
             </button>
             <button
-              onClick={() => scrollTo('solutions')}
+              onClick={() => scrollTo("solutions")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Solutions
             </button>
             <button
-              onClick={() => scrollTo('services')}
+              onClick={() => scrollTo("services")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Services
             </button>
             <button
-              onClick={() => scrollTo('clients')}
+              onClick={() => scrollTo("clients")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Clients
             </button>
             <button
-              onClick={() => scrollTo('vendors')}
+              onClick={() => scrollTo("vendors")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Vendors
             </button>
-            
+
             <div className="space-y-1">
-              <div className="px-4 py-2 text-foreground/70 font-medium text-sm">About Us</div>
+              <div className="px-4 py-2 text-foreground/70 font-medium text-sm">
+                About Us
+              </div>
               <button
-                onClick={() => scrollTo('about')}
+                onClick={() => scrollTo("about")}
                 className="block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors text-sm"
               >
                 Company
               </button>
               <button
-                onClick={() => scrollTo('about')}
+                onClick={() => scrollTo("about")}
                 className="block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors text-sm"
               >
                 Leadership
               </button>
               <button
-                onClick={() => scrollTo('about')}
+                onClick={() => scrollTo("about")}
                 className="block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors text-sm"
               >
                 Careers
               </button>
               <button
-                onClick={() => scrollTo('about')}
+                onClick={() => scrollTo("about")}
                 className="block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors text-sm"
               >
                 Newsroom
@@ -196,13 +205,13 @@ const Navbar = () => {
             </div>
 
             <button
-              onClick={() => scrollTo('contact')}
+              onClick={() => scrollTo("contact")}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors"
             >
               Contact Us
             </button>
-            <Button 
-              onClick={() => scrollTo('contact')}
+            <Button
+              onClick={() => scrollTo("contact")}
               className="w-full bg-primary hover:bg-primary/90 text-black font-semibold"
             >
               Get a Demo

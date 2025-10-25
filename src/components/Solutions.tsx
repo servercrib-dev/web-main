@@ -68,7 +68,7 @@ const solutions = [
 ];
 
 const Solutions = () => {
-  const [selectedSolution, setSelectedSolution] = useState<typeof solutions[0] | null>(null);
+  const [_, setSelectedSolution] = useState<typeof solutions[0] | null>(null);
 
   return (
     <section id="solutions" className="relative overflow-hidden">
