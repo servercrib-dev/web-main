@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Solutions from "@/components/Solutions";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const SolutionsPage = () => {
@@ -11,7 +10,6 @@ const SolutionsPage = () => {
       <main>
         <Solutions />
         <CTA />
-        <Contact />
       </main>
       <Footer />
     </div>

@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar";
-import Products from "@/components/Products";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
 
-const ProductsPage = () => {
+const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <main>
-        <Products />
+        <About />
         <CTA />
       </main>
       <Footer />
@@ -16,4 +16,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default AboutPage;

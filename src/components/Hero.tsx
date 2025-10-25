@@ -4,12 +4,6 @@ import MatrixRain from "./MatrixRain";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const scrollToSolutions = () => {
-    document
-      .getElementById("solutions")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -59,14 +53,15 @@ const Hero = () => {
                 🚀 Explore Our Solutions
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base px-10 py-7 border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white font-semibold"
-              onClick={scrollToContact}
-            >
-              📞 Schedule a Call
-            </Button>
+            <Link to={"/contact"}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base px-10 py-7 border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white font-semibold"
+              >
+                📞 Schedule a Call
+              </Button>
+            </Link>
           </div>
 
           {/* Scroll Indicator */}

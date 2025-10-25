@@ -68,54 +68,10 @@ const services = [
 ];
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const [_, setSelectedService] = useState<typeof services[0] | null>(null);
 
   return (
     <section id="services" className="relative overflow-hidden">
-      {/* Hero Section */}
-      <div className="py-32 bg-gradient-to-b from-muted/30 via-background to-muted/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/80">
-                Empowering Business Continuity
-              </span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-foreground/90 animate-fade-in">
-              Through Managed Innovation.
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in">
-              We deliver continuous IT excellence through ERP/CRM customization, cybersecurity operations, cloud management, and 24/7 support services — so your business stays secure, efficient, and future-ready.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in">
-              <Button 
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-black font-semibold text-lg px-8 py-6"
-                onClick={() => document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                ⚙️ View Our Services
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white text-lg px-8 py-6 font-semibold"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                💬 Talk to an Expert
-              </Button>
-            </div>
-
-            <p className="text-sm text-muted-foreground italic animate-fade-in">
-              ✨ We Manage the Technology. You Focus on Growth.
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Services Grid Section */}
       <div id="services-grid" className="py-24 bg-background relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
@@ -208,17 +164,6 @@ const Services = () => {
               );
             })}
           </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Get Started
-          </Button>
         </div>
       </div>
       </div>
