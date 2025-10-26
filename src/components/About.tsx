@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Brain, Target, Eye, Lightbulb, Shield, Users, CheckCircle } from "lucide-react";
 import johnImage from "@/assets/john.jpg";
 import nnennaImage from "@/assets/nnenna.jpg";
-import awesomeImage from "@/assets/awesome.jpg";
+import awesomeImage from "@/assets/awesome.jpeg";
 import estherImage from "@/assets/esther.jpg";
 import ifeanyiImage from "@/assets/ifeanyi.jpg";
 import favorImage from "@/assets/favor.jpg";
