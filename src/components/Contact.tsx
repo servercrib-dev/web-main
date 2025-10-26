@@ -56,11 +56,55 @@ const Contact = () => {
   };
 
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'auto' });
   };
 
   return (
     <section id="contact" className="relative overflow-hidden">
+      {/* Hero Section */}
+      <div className="py-32 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/80">
+                Let's Build the Future — Together.
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in">
+              Whether you're ready to start your digital transformation, request a demo, or explore partnership opportunities — our experts at Servercrib Technology Solutions are here to help.
+              <br />
+              <span className="font-semibold text-foreground">We respond promptly, professionally, and personally.</span>
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in">
+              <Button 
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-black font-semibold text-lg px-8 py-6"
+                onClick={scrollToForm}
+              >
+                📞 Schedule a Call
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-primary/30 hover:border-primary hover:bg-primary/10 text-lg px-8 py-6 font-semibold"
+                onClick={scrollToForm}
+              >
+                📩 Send Us a Message
+              </Button>
+            </div>
+
+            <p className="text-sm text-muted-foreground italic animate-fade-in">
+              ✨ Connect with Confidence. Collaborate with Innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Content Section */}
       <div id="contact-form" className="py-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
@@ -174,7 +218,7 @@ const Contact = () => {
                     <div className="space-y-3 text-muted-foreground">
                       <p className="flex items-start gap-2">
                         <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Maryland, United States</span>
+                        <span>7375 Executive Place, Suite 400<br />Lanham, MD 20706, United States</span>
                       </p>
                       <p className="flex items-start gap-2">
                         <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -221,7 +265,7 @@ const Contact = () => {
                     <div className="space-y-3 text-muted-foreground">
                       <p className="flex items-start gap-2">
                         <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Lagos, Nigeria</span>
+                        <span>No. 16 Amodu Ojikutu Street<br />Victoria Island, Lagos, Nigeria</span>
                       </p>
                       <p className="flex items-start gap-2">
                         <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -495,7 +539,40 @@ const Contact = () => {
         </div>
       </div>
 
-      
+      {/* Closing CTA Banner */}
+      <div className="py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to transform your business? Let's make it happen.
+            </h3>
+            <p className="text-lg text-muted-foreground mb-8">
+              Book a discovery call today and find out how Servercrib can help your organization grow securely and intelligently.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-black font-semibold text-lg px-8 py-6"
+                asChild
+              >
+                <a href="mailto:info@servercribtechnologysolutions.com">
+                  🚀 Start Your Project
+                </a>
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-primary/30 hover:border-primary hover:bg-primary/10 text-lg px-8 py-6 font-semibold"
+                onClick={scrollToForm}
+              >
+                📞 Schedule a Call
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

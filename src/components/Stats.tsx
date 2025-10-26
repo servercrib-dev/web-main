@@ -1,8 +1,25 @@
-import { stats } from "./utils/constants";
+const stats = [
+  {
+    value: "40%",
+    label: "Reduction in Manual Errors",
+  },
+  {
+    value: "99.9%",
+    label: "Uptime Reliability",
+  },
+  {
+    value: "35%",
+    label: "Fewer Security Incidents",
+  },
+  {
+    value: "50%",
+    label: "Cloud Cost Savings",
+  },
+];
 
 const Stats = () => {
   return (
-    <section id="stats" className="py-16 bg-background border-y border-border/50 relative overflow-hidden">
+    <section className="py-16 bg-background border-y border-border/50 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
