@@ -9,16 +9,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { aboutMenu, navMenu } from "@/constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "auto" });
-    setIsOpen(false);
-  };
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
@@ -42,7 +41,13 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-6">
             {navMenu.map((item) => (
               <Link to={`/${item}`}>
-                <button className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium capitalize">
+                <button
+                  className={`text-foreground/70 hover:text-primary ${
+                    location.pathname.toLowerCase().includes(item.toLowerCase())
+                      ? "text-primary font-bold"
+                      : ""
+                  } transition-colors text-sm font-medium capitalize`}
+                >
                   {item}
                 </button>
               </Link>
@@ -51,15 +56,27 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground/70 hover:text-primary bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm font-medium h-auto p-0">
+                  <NavigationMenuTrigger
+                    className={`text-foreground/70 hover:text-primary ${
+                      location.pathname.includes("about")
+                        ? "text-primary font-bold"
+                        : ""
+                    } bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm font-medium h-auto p-0`}
+                  >
                     About Us
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-background border border-border/50">
                     <ul className="w-48 p-2">
                       {aboutMenu.map((item) => (
                         <li>
-                          <Link to={`/${item}`}>
-                            <button className="block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors capitalize">
+                          <Link to={`/about/${item}`}>
+                            <button
+                              className={`block w-full text-left px-4 py-2 text-sm text-foreground/70 hover:text-primary ${
+                                location.pathname.includes(item.toLowerCase())
+                                  ? "text-primary font-bold"
+                                  : ""
+                              } hover:bg-muted rounded-md transition-colors capitalize`}
+                            >
                               {item}
                             </button>
                           </Link>
@@ -71,7 +88,13 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
             <Link to={"/contact"}>
-              <button className="text-foreground/70 hover:text-primary transition-colors text-sm font-medium">
+              <button
+                className={`text-foreground/70 hover:text-primary ${
+                  location.pathname.includes("contact")
+                    ? "text-primary font-bold"
+                    : ""
+                } transition-colors text-sm font-medium`}
+              >
                 Contact Us
               </button>
             </Link>
@@ -99,33 +122,53 @@ const Navbar = () => {
           <div className="lg:hidden py-4 space-y-3 border-t border-border/30">
             {navMenu.map((item) => (
               <Link to={`/${item}`}>
-                <button className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors capitalize">
+                <button
+                  className={`block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary ${
+                    location.pathname.includes(item.toLowerCase())
+                      ? "text-primary font-bold"
+                      : ""
+                  } transition-colors capitalize`}
+                >
                   {item}
                 </button>
               </Link>
             ))}
 
             <div className="space-y-1">
-              <div className="px-4 py-2 text-foreground/70 font-medium text-sm">
+              <div
+                className={`px-4 py-2 text-foreground/70 ${location.pathname.includes(
+                  "about"
+                )} font-medium text-sm`}
+              >
                 About Us
               </div>
               {aboutMenu.map((item) => (
-                <Link to={`/${item}`}>
-                  <button className="block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors text-sm capitalize">
+                <Link to={`/about/${item}`}>
+                  <button
+                    className={`block w-full text-left px-8 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary ${
+                      location.pathname.includes(item.toLowerCase())
+                        ? "text-primary font-bold"
+                        : ""
+                    } transition-colors text-sm capitalize`}
+                  >
                     {item}
                   </button>
                 </Link>
               ))}
             </div>
             <Link to={"/contact"}>
-              <button className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary transition-colors">
+              <button
+                className={`block w-full text-left px-4 py-2 hover:bg-muted rounded-md text-foreground/70 hover:text-primary ${
+                  location.pathname.includes("contact")
+                    ? "text-primary font-bold"
+                    : ""
+                } transition-colors`}
+              >
                 Contact Us
               </button>
             </Link>
             <Link to={"/contact"}>
-              <Button
-                className="w-full bg-primary hover:bg-primary/90 text-black font-semibold"
-              >
+              <Button className="w-full bg-primary hover:bg-primary/90 text-black font-semibold">
                 Get a Demo
               </Button>
             </Link>
