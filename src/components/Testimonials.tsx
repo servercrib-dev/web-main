@@ -4,22 +4,22 @@ import { Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Servercrib helped us automate our operations, reduce cost, and improve compliance. Their team feels like part of ours.",
-      author: "CEO",
-      company: "Logistics Company",
-      location: "Maryland"
+      quote: "Servercrib's managed IT services transformed our infrastructure. Their 24/7 monitoring and proactive support have eliminated downtime and allowed us to focus on growing our business.",
+      author: "IT Manager",
+      company: "Monée by Citygate",
+      location: "Financial Services"
     },
     {
-      quote: "The implementation of AvenERP transformed how we manage our business processes. The support team has been exceptional.",
-      author: "CTO",
-      company: "Manufacturing Enterprise",
-      location: "Lagos"
+      quote: "Their cybersecurity implementation gave us enterprise-grade protection. The threat detection and incident response services have been exceptional, keeping our sensitive data secure.",
+      author: "Operations Director",
+      company: "Global Organics Limited",
+      location: "Pharmaceutical"
     },
     {
-      quote: "Their cybersecurity solutions with Defendria gave us peace of mind. We finally have 24/7 protection and real-time threat monitoring.",
-      author: "IT Director",
-      company: "Financial Services",
-      location: "USA"
+      quote: "The network infrastructure upgrade and cloud migration services were seamless. Servercrib's technical expertise and ongoing support have significantly improved our operational efficiency.",
+      author: "Technology Lead",
+      company: "Dugo Capital Investment Limited",
+      location: "Investment Management"
     }
   ];
 
