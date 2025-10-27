@@ -114,7 +114,7 @@ const Solutions = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-primary/30 hover:border-primary hover:bg-primary/10 text-lg px-8 py-6 font-semibold"
+                className="border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white text-lg px-8 py-6 font-semibold"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'auto' })}
               >
                 📞 Request a Consultation
@@ -159,7 +159,7 @@ const Solutions = () => {
                     <DialogTrigger asChild>
                       <Button 
                         variant="outline" 
-                        className="w-full border-primary/30 hover:border-primary hover:bg-primary/10"
+                        className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white"
                         onClick={() => setSelectedSolution(solution)}
                       >
                         Learn more →

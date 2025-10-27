@@ -56,7 +56,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-base px-10 py-7 border-primary/30 hover:border-primary hover:bg-primary/10 font-semibold"
+              className="text-base px-10 py-7 border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-white font-semibold"
               onClick={scrollToContact}
             >
               📞 Schedule a Call
