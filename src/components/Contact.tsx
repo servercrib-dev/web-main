@@ -52,6 +52,12 @@ const Contact = () => {
       return;
     }
 
+    await fetch("/.netlify/functions/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
     // Simulate form submission
     setTimeout(() => {
       toast({
